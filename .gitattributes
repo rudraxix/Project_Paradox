@@ -7,9 +7,9 @@
 * text=auto
 
 # Explicitly set line endings for specific file types
-*.sh text eol=lf   # Shell scripts use LF
-*.bat text eol=crlf # Windows batch scripts use CRLF
-*.ps1 text eol=crlf # PowerShell scripts use CRLF
+*.sh text eol=lf   
+*.bat text eol=crlf 
+*.ps1 text eol=crlf
 
 # Keep JSON, YAML, and config files in LF format
 *.json text eol=lf
