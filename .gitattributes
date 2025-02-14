@@ -2,3 +2,28 @@
 *.png filter=lfs diff=lfs merge=lfs -text
 *.mp4 filter=lfs diff=lfs merge=lfs -text
 *.fbx filter=lfs diff=lfs merge=lfs -text
+
+# Normalize text files to LF (Linux/macOS) but allow Windows users to check out as CRLF
+* text=auto
+
+# Explicitly set line endings for specific file types
+*.sh text eol=lf   # Shell scripts use LF
+*.bat text eol=crlf # Windows batch scripts use CRLF
+*.ps1 text eol=crlf # PowerShell scripts use CRLF
+
+# Keep JSON, YAML, and config files in LF format
+*.json text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+*.toml text eol=lf
+
+# Keep C# and C++ source code in LF format
+*.cs text eol=lf
+*.cpp text eol=lf
+*.h text eol=lf
+*.c text eol=lf
+*.hpp text eol=lf
+
+# Keep Markdown and README files in LF format
+*.md text eol=lf
+*.txt text eol=lf
