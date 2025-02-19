@@ -38,7 +38,14 @@ public class PerlinNoiseTerrain : MonoBehaviour
             {
                 float xpoint = (float)x / width * scale; 
                 float zpoint = (float)z / depth * scale;
-                heights[x, z] = Mathf.PerlinNoise(xpoint, zpoint);
+
+                //Adding multiple layers of PerlinNoise
+                float noise1 = Mathf.PerlinNoise(xpoint, zpoint);
+                float noise2 = Mathf.PerlinNoise(xpoint * 1.5f, zpoint * 1.3f) * 0.5f;
+                float noise3 = Mathf.PerlinNoise(xpoint * 2f, zpoint * 2f) * 0.25f;
+
+                float finalheight = (noise1 + noise2 + noise3) / 1f;
+                heights[x, z] = finalheight;
             }
         }
         return heights;
